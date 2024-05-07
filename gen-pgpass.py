@@ -26,6 +26,7 @@ def main():
     data = load_config()
 
     for db in data['databases']:
+        password = password.replace('\\', '\\\\').replace(':', '\\:')
         print('{host}:{port}:{database}:{user}:{password}'.format(**db))
 
 
