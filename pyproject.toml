@@ -1,0 +1,29 @@
+[project]
+name = "dbconn"
+version = "0.1.0"
+description = "A simple cli tool for managing database connections and connecting with cli tools"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "iterfzf>=1.6.0.60.3",
+    "pyyaml>=6.0.2",
+]
+
+[project.scripts]
+dbconn = "dbconn.cli:main"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.setuptools]
+packages = ["dbconn"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+]
