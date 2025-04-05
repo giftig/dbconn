@@ -6,7 +6,9 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "iterfzf>=1.6.0.60.3",
+    "pydantic>=2.11.2",
     "pyyaml>=6.0.2",
+    "sshtunnel>=0.4.0",
 ]
 
 [project.scripts]
