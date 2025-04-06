@@ -11,7 +11,7 @@ class PsqlExecutable(Executable):
             "--host",
             host or db.host,
             "--port",
-            str(self.port),
+            str(port),
             "--db",
             db.database,
         ]
@@ -26,7 +26,7 @@ class PgcliExecutable(Executable):
             "--host",
             host or db.host,
             "--port",
-            str(port or self.port),
+            str(port),
             "--dbname",
             db.database,
         ]

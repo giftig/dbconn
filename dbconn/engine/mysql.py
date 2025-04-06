@@ -15,7 +15,7 @@ class MysqlExecutable(Executable):
             host or db.host,
             f"--password={db.password}",
             "--port",
-            str(port or self.port),
+            str(port),
             f"--database={db.database}",
         ]
         if self.prompt_text:

@@ -49,7 +49,7 @@ class Engine:
         return self.db.port or self.default_port
 
     def _connect(self, host: str | None = None, port: int | None = None):
-        cmd = self.executable.get_command(self.db, host, port)
+        cmd = self.executable.get_command(self.db, host, port or self.port)
 
         print(f"\033[33mConnecting to {self.db}\033[0m")
         print(f"\033[36mCommand: {utils.format_command(cmd)}\033[0m")
