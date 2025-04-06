@@ -4,6 +4,7 @@ from typing import Any
 from pydantic import BaseModel, ValidationError, field_validator
 import yaml
 
+
 class Tunnel(BaseModel):
     host: str
     port: int = 22

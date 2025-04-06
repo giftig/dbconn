@@ -55,7 +55,6 @@ class Engine:
         p = subprocess.Popen(cmd)
         p.wait()
 
-
     def connect(self):
         if not self.db.tunnel:
             return self._connect()
@@ -70,7 +69,7 @@ class Engine:
             ssh_pkey=tun.pkey,
             ssh_private_key_password=tun.pkey_password,
             remote_bind_address=(self.db.host, self.port),
-            local_bind_address=("0.0.0.0", free_port)
+            local_bind_address=("0.0.0.0", free_port),
         ):
             print(
                 f"\033[32mTunnelling 0.0.0.0:{free_port} -> {self.db.host}:{self.port} "

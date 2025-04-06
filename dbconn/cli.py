@@ -21,15 +21,19 @@ def gen_pgpass(cfg: conf.Config):
 def main():
     parser = argparse.ArgumentParser("dbconn")
     parser.add_argument(
-        "-p", "--pgpass", action="store_true", dest="gen_pgpass",
+        "-p",
+        "--pgpass",
+        action="store_true",
+        dest="gen_pgpass",
         help=(
             "Print a pgpass file corresponding to the database config and exit, instead of "
             "connecting to a database"
-        )
+        ),
     )
     parser.add_argument(
-        "-c", "--config-file",
-        help="Use the given config file. You can also set this via the DBCONN_CONFIG_FILE env var"
+        "-c",
+        "--config-file",
+        help="Use the given config file. You can also set this via the DBCONN_CONFIG_FILE env var",
     )
     args = parser.parse_args()
 
