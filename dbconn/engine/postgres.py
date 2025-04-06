@@ -3,7 +3,7 @@ from dbconn.engine import Engine, Executable
 
 
 class PsqlExecutable(Executable):
-    def get_command(db: Database, host: str | None = None, port: int | None = None):
+    def get_command(self, db: Database, host: str | None = None, port: int | None = None):
         return [
             "psql",
             "-U",
@@ -18,7 +18,7 @@ class PsqlExecutable(Executable):
 
 
 class PgcliExecutable(Executable):
-    def get_command(db: Database, host: str | None = None, port: int | None = None):
+    def get_command(self, db: Database, host: str | None = None, port: int | None = None):
         return [
             "pgcli",
             "-U",

@@ -23,7 +23,7 @@ def get_engine(db: Database):
 
 
 class Executable:
-    def get_command(db: Database, host: str | None = None, port: int | None = None):
+    def get_command(self, db: Database, host: str | None = None, port: int | None = None):
         raise NotImplementedError
 
 
@@ -35,11 +35,13 @@ class Engine:
     def __init__(self, db: Database):
         self.db = db
 
-        self.executable = self.supported_executables.get(db.executable or self.default_executable)
-        if not self.executable:
+        exec_cls = self.supported_executables.get(db.executable or self.default_executable)
+        if not exec_cls:
             raise ValueError(
                 f"Unsupported executable {db.executable} for engine {self.__class__.__name__}"
             )
+
+        self.executable = exec_cls(**db.executable_options)
 
     @property
     def port(self) -> int:

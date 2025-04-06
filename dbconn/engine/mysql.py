@@ -3,8 +3,11 @@ from dbconn.engine import Engine, Executable
 
 
 class MysqlExecutable(Executable):
-    def get_command(db: Database, host: str | None = None, port: int | None = None):
-        return [
+    def __init__(self, prompt_text: str | None = None):
+        self.prompt_text = prompt_text
+
+    def get_command(self, db: Database, host: str | None = None, port: int | None = None):
+        cmd = [
             "mysql",
             "-u",
             db.user,
@@ -15,6 +18,10 @@ class MysqlExecutable(Executable):
             str(port or self.port),
             f"--database={db.database}",
         ]
+        if self.prompt_text:
+            cmd.append(f"--prompt={self.prompt_text}> ")
+
+        return cmd
 
 
 class MysqlEngine(Engine):

@@ -23,6 +23,7 @@ class Database(BaseModel):
     port: int | None = None
     engine: str | None = None
     executable: str | None = None
+    executable_options: dict = {}
     tunnel: Tunnel | None = None
 
     def __str__(self):
