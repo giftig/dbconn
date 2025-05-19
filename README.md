@@ -39,7 +39,7 @@ databases:
 
 ## Quickstart
 
-Use `dbconn --gen-pgpass > ~/.pgpass` to generate a pgpass file for your postgres databases, based on your yaml
+Use `dbconn --pgpass > ~/.pgpass` to generate a pgpass file for your postgres databases, based on your yaml
 config. You can regenerate this whenever you update your database list. Make sure you chmod the pgpass file to
 `0600`.
 
