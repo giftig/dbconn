@@ -5,8 +5,8 @@
 Lightweight cli for easily configuring and connecting to multiple different Postgres or MySQL databases.
 Configure your various databases as YAML and use fzf to select which one you want to connect to.
 
-Supports `psql` and `pgcli` for postgres, and the `mysql` cli for mysql (you'll need to install these cli
-tools yourself).
+Supports `psql` and `pgcli` for postgres, and the `mysql` and `mycli` clis for mysql (you'll need to install
+these cli tools yourself).
 
 ## Config file example
 
