@@ -33,7 +33,10 @@ def main():
     parser.add_argument(
         "-c",
         "--config-file",
-        help="Use the given config file. You can also set this via the DBCONN_CONFIG_FILE env var",
+        help=(
+            "Use the given config file. You can also set this via the DBCONN_CONFIG_FILE env var "
+            "If not set, defaults to ~/.dbconn/config.yaml"
+        ),
     )
     args = parser.parse_args()
 
