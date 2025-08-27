@@ -2,8 +2,8 @@ import subprocess
 
 import sshtunnel
 
-from dbconn.conf import Database
 from dbconn import utils
+from dbconn.conf import Database
 
 
 def get_engine(db: Database):

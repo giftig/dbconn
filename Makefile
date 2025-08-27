@@ -1,6 +1,7 @@
 test:
-#	uv run pytest
+#	uv run pytest --cov=dbconn
 	ruff check
 
 fmt:
-	@ruff format
+	ruff check --select I,F401 --fix
+	ruff format

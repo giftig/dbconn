@@ -1,8 +1,8 @@
 import os
 from typing import Any
 
-from pydantic import BaseModel, ValidationError, field_validator
 import yaml
+from pydantic import BaseModel, ValidationError, field_validator
 
 
 class Tunnel(BaseModel):
